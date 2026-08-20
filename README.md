@@ -75,7 +75,7 @@ The current frontend implementation does not require a complex installation proc
 For development or modification, familiarity with HTML5, CSS3, and JavaScript is recommended.
 
 ## Tech Stack| Technology | Purpose |
-|------------|---------|
+
 | HTML5 | Semantic structure and web architecture |
 | CSS3 | Responsive layout and interface design |
 | JavaScript | Dynamic interactions and application logic |
