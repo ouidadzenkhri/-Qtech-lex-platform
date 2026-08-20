@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="QTech Legal - Professional legal deadline and time-period management platform."
+    >
+
+    <meta name="theme-color" content="#0b1220">
+
+    <title>QTech Legal | Deadline Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="script.js" defer></script>
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         APPLICATION
+    ====================================================== -->
+
+    <div class="app" id="app">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <!-- Brand -->
+
+            <div class="brand">
+
+                <a href="#dashboard" class="brand-link">
+
+                    <span class="brand-logo">
+                        Q
+                    </span>
+
+                    <span class="brand-text">
+                        <strong>QTech</strong>
+                        <small>LEGAL</small>
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Main Navigation -->
+
+            <nav class="sidebar-nav" aria-label="Main navigation">
+
+                <p class="nav-label">
+                    WORKSPACE
+                </p>
+
+                <a
+                    href="#dashboard"
+                    class="nav-item active"
+                    data-page="dashboard"
+                >
+                    <span class="nav-icon dashboard-icon" aria-hidden="true">⌂</span>
+                    <span>Dashboard</span>
+                </a>
+
+
+                <a
+                    href="#calculator"
+                    class="nav-item"
+                    data-page="calculator"
+                >
+                    <span class="nav-icon">⚖</span>
+                    <span>Deadline Calculator</span>
+                </a>
+
+
+                <a
+                    href="#calendar"
+                    class="nav-item"
+                    data-page="calendar"
+                >
+                    <span class="nav-icon">▣</span>
+                    <span>Calendar</span>
+                </a>
+
+
+                <a
+                    href="#history"
+                    class="nav-item"
+                    data-page="history"
+                >
+                    <span class="nav-icon">◷</span>
+                    <span>History</span>
+                </a>
+
+
+                <p class="nav-label">
+                    LEGAL DATA
+                </p>
+
+
+                <a
+                    href="#rules"
+                    class="nav-item"
+                    data-page="rules"
+                >
+                    <span class="nav-icon rules-icon" aria-hidden="true">§</span>
+                    <span>Legal Rules</span>
+                </a>
+
+
+                <a
+                    href="#holidays"
+                    class="nav-item"
+                    data-page="holidays"
+                >
+                    <span class="nav-icon">◆</span>
+                    <span>Holidays</span>
+                </a>
+
+
+                <p class="nav-label">
+                    SYSTEM
+                </p>
+
+
+                <a
+                    href="#settings"
+                    class="nav-item"
+                    data-page="settings"
+                >
+                    <span class="nav-icon">⚙</span>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+
+            <!-- Sidebar Footer -->
+
+            <div class="sidebar-footer">
+
+                <div class="app-version">
+                    <span>QTech Legal</span>
+                    <small>v1.0.0</small>
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN AREA
+        ================================================== -->
+
+        <div class="main-wrapper"><!-- =============================================
+                 TOPBAR
+            ============================================== -->
+
+            <header class="topbar">
+
+                <div class="topbar-left">
+
+                    <button
+                        type="button"
+                        class="menu-toggle"
+                        id="menuToggle"
+                        aria-label="Open navigation"
+                        aria-expanded="false"
+                    >
+                        ☰
+                    </button>
+
+
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
+                        <span class="breadcrumb-brand">QTech Legal</span>
+                    </nav>
+
+                </div>
+
+
+                <div class="quick-actions" aria-label="Quick actions">
+
+                    <button
+                        type="button"
+                        class="icon-button quick-action"
+                        id="themeToggle"
+                        aria-label="Switch to dark mode"
+                        title="Switch to dark mode"
+                        aria-pressed="false"
+                    >
+                        <span id="themeIcon" aria-hidden="true">☼</span>
+                    </button>
+
+
+                </div>
+
+
+                <div class="profile-cluster">
+
+                    <div class="user-menu">
+
+                        <button
+                            type="button"
+                            class="user-button"
+                            id="userButton"
+                            aria-label="Sign in with Google"
+                            title="Sign in with Google"
+                        >
+                            <span class="user-avatar google-avatar" aria-hidden="true">U</span>
+
+                            <span class="user-info">
+                                <strong>User</strong>
+                                <small id="userEmail">user@legal.workspace</small>
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =============================================
+                 PAGE CONTENT
+            ============================================== -->
+
+            <main class="content">
+
+
+                <!-- =========================================
+                     DASHBOARD
+                ========================================== -->
+
+                <section
+                    class="page"
+                    id="dashboard"
+                    data-page-section
+                >
+
+                    <div class="page-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                LEGAL TECHNOLOGY
+                            </span>
+
+                            <h1 id="dashboardGreeting">
+                                Legal Dashboard
+                            </h1>
+
+                            <p>
+                                Manage deadlines, legal periods,
+                                calculations and important dates
+                                from one place.
+                            </p>
+
+                        </div>
+
+
+                        <a
+                            href="#calculator"
+                            class="primary-action"
+                        >
+                            <span>+</span>
+                            New Calculation
+                        </a>
+
+                    </div>
+
+
+
+                    <!-- Dashboard Statistics -->
+
+                    <div class="stats-grid">
+
+                        <article class="stat-card">
+
+                            <div class="stat-icon">
+                                ⚖
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Calculations
+                                </span><strong id="totalCalculations">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="stat-card">
+
+                            <div class="stat-icon">
+                                ◷
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Active Deadlines
+                                </span>
+
+                                <strong id="activeDeadlines">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="stat-card">
+
+                            <div class="stat-icon">
+                                !
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Expiring Soon
+                                </span>
+
+                                <strong id="expiringSoon">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="stat-card">
+
+                            <div class="stat-icon">
+                                ◆
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Saved Rules
+                                </span>
+
+                                <strong id="savedRules">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+
+                    <!-- Dashboard Grid -->
+
+                    <div class="dashboard-grid">
+
+
+                        <!-- Upcoming Deadlines -->
+
+                        <article class="panel">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <h2>
+                                        Upcoming Deadlines
+                                    </h2>
+
+                                    <p>
+                                        Your next important dates.
+                                    </p>
+
+                                </div>
+
+                                <a href="#calendar">
+                                    View calendar
+                                </a>
+
+                            </div>
+
+
+                            <div
+                                class="deadline-list"
+                                id="upcomingDeadlines"
+                            >
+
+                                <div class="empty-state">
+                                    <span>◷</span>
+
+                                    <strong>
+                                        No deadlines yet
+                                    </strong>
+
+                                    <p>
+                                        Your upcoming deadlines
+                                        will appear here.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- Recent Activity -->
+
+                        <article class="panel">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <h2>
+                                        Recent Activity
+                                    </h2>
+
+                                    <p>
+                                        Latest calculations.
+                                    </p>
+
+                                </div><a href="#history">
+                                    View all
+                                </a>
+
+                            </div>
+
+
+                            <div
+                                class="activity-list"
+                                id="recentActivity"
+                            >
+
+                                <div class="empty-state">
+                                    <span>◷</span>
+
+                                    <strong>
+                                        No recent activity
+                                    </strong>
+
+                                    <p>
+                                        Your activity will appear
+                                        here.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                    <p class="dashboard-copyright">
+                        © QTech Legal | Crafted by OuidadZenkhri
+                    </p>
+
+                </section>
+
+
+
+                <!-- =========================================
+                     CALCULATOR
+                ========================================== -->
+
+                <section
+                    class="page"
+                    id="calculator"
+                    data-page-section
+                    hidden
+                >
+
+                    <div class="page-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                CALCULATION ENGINE
+                            </span>
+
+                            <h1>
+                                Deadline Calculator
+                            </h1>
+
+                            <p>
+                                Calculate a legal period using
+                                the applicable counting method.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="calculator-layout">
+
+
+                        <!-- Calculator Form -->
+
+                        <article class="panel calculator-panel">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <h2>
+                                        Calculation Parameters
+                                    </h2>
+
+                                    <p>
+                                        Enter the facts of the
+                                        legal period.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <form id="deadlineForm">
+
+
+                                <!-- Date -->
+
+                                <div class="form-group">
+
+                                    <label for="startDate">
+                                        Starting Date
+                                    </label>
+
+                                    <input
+                                        type="date"
+                                        id="startDate"
+                                        name="startDate"
+                                        required
+                                    >
+
+                                    <small>
+                                        Date from which the
+                                        calculation begins.
+                                    </small>
+
+                                </div>
+
+
+
+                                <!-- Duration -->
+
+                                <div class="form-grid">
+
+                                    <div class="form-group">
+
+                                        <label for="duration">
+                                            Duration
+                                        </label>
+
+                                        <input type="number"
+                                            id="duration"
+                                            name="duration"
+                                            min="1"
+                                            placeholder="15"
+                                            required
+                                        >
+
+                                    </div>
+
+
+                                    <div class="form-group">
+
+                                        <label for="unit">
+                                            Unit
+                                        </label>
+
+                                        <select
+                                            id="unit"
+                                            name="unit"
+                                        >
+
+                                            <option value="days">
+                                                Days
+                                            </option>
+
+                                            <option value="weeks">
+                                                Weeks
+                                            </option>
+
+                                            <option value="months">
+                                                Months
+                                            </option>
+
+                                            <option value="years">
+                                                Years
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <!-- Legal Framework -->
+
+                                <div class="form-group">
+
+                                    <label for="jurisdiction">
+                                        Jurisdiction
+                                    </label>
+
+                                    <select
+                                        id="jurisdiction"
+                                        name="jurisdiction"
+                                    >
+
+                                        <option value="algeria">
+                                            Algeria
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+
+                                <!-- Rule -->
+
+                                <div class="form-group">
+
+                                    <label for="legalRule">
+                                        Legal Rule
+                                    </label>
+
+                                    <select
+                                        id="legalRule"
+                                        name="legalRule"
+                                    >
+
+                                        <option value="general">
+                                            General Deadline
+                                        </option>
+
+                                    </select>
+
+                                    <small>
+                                        The applicable rule will
+                                        determine how the period
+                                        is counted.
+                                    </small>
+
+                                </div>
+
+
+
+                                <!-- Counting Method -->
+
+                                <fieldset class="form-fieldset">
+
+                                    <legend>
+                                        Counting Method
+                                    </legend>
+
+
+                                    <label class="radio-option">
+
+                                        <input
+                                            type="radio"
+                                            id="calendarMethod"
+                                            name="countingMethod"
+                                            value="calendar"
+                                            checked
+                                        ><span>
+                                            <strong>
+                                                Calendar Days
+                                            </strong>
+
+                                            <small>
+                                                Count every calendar
+                                                day.
+                                            </small>
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="radio-option">
+
+                                        <input
+                                            type="radio"
+                                            id="workingMethod"
+                                            name="countingMethod"
+                                            value="working"
+                                        >
+
+                                        <span>
+                                            <strong>
+                                                Working Days
+                                            </strong>
+
+                                            <small>
+                                                Exclude configured
+                                                weekends and holidays.
+                                            </small>
+                                        </span>
+
+                                    </label>
+
+                                </fieldset>
+
+
+
+                                <!-- Advanced Options -->
+
+                                <details class="advanced-options">
+
+                                    <summary>
+                                        Advanced calculation options
+                                    </summary>
+
+
+                                    <div class="advanced-content">
+
+                                        <label class="checkbox-option">
+
+                                            <input
+                                                type="checkbox"
+                                                id="includeStart"
+                                                name="includeStart"
+                                            >
+
+                                            <span>
+                                                Include starting date
+                                            </span>
+
+                                        </label>
+
+
+                                        <label class="checkbox-option">
+
+                                            <input
+                                                type="checkbox"
+                                                id="moveFromHoliday"
+                                                name="moveFromHoliday"
+                                            >
+
+                                            <span>
+                                                Move deadline when it
+                                                falls on a non-working day
+                                            </span>
+
+                                        </label>
+
+                                    </div>
+
+                                </details>
+
+
+
+                                <!-- Form Actions -->
+
+                                <div class="form-actions">
+
+                                    <button
+                                        type="submit"
+                                        class="primary-action"
+                                        id="calculateButton"
+                                    >
+                                        Calculate Deadline
+                                    </button>
+
+
+                                    <button
+                                        type="reset"
+                                        class="secondary-action"
+                                        id="resetButton"
+                                    >
+                                        Reset
+                                    </button>
+
+                                </div></form>
+
+                        </article>
+
+
+
+                        <!-- Calculation Result -->
+
+                        <aside
+                            class="panel result-panel"
+                            id="calculationResult"
+                            aria-live="polite"
+                        >
+
+                            <div class="result-header">
+
+                                <span class="eyebrow">
+                                    RESULT
+                                </span>
+
+                                <span
+                                    class="status-badge"
+                                    id="deadlineStatus"
+                                >
+                                    Ready
+                                </span>
+
+                            </div>
+
+
+                            <div class="result-main">
+
+                                <span>
+                                    Deadline Date
+                                </span>
+
+                                <time
+                                    id="deadlineDate"
+                                    datetime=""
+                                >
+                                    —
+                                </time>
+
+                            </div>
+
+
+                            <dl class="result-summary">
+
+                                <div>
+                                    <dt>
+                                        Starting Date
+                                    </dt>
+
+                                    <dd id="resultStart">
+                                        —
+                                    </dd>
+                                </div>
+
+
+                                <div>
+                                    <dt>
+                                        Period
+                                    </dt>
+
+                                    <dd id="resultPeriod">
+                                        —
+                                    </dd>
+                                </div>
+
+
+                                <div>
+                                    <dt>
+                                        Method
+                                    </dt>
+
+                                    <dd id="resultMethod">
+                                        —
+                                    </dd>
+                                </div>
+
+
+                                <div>
+                                    <dt>
+                                        Remaining
+                                    </dt>
+
+                                    <dd id="resultRemaining">
+                                        —
+                                    </dd>
+                                </div>
+
+                            </dl>
+
+
+                            <div class="result-actions">
+
+                                <button
+                                    type="button"
+                                    id="saveCalculation"
+                                >
+                                    Save
+                                </button>
+
+                                <button
+                                    type="button"
+                                    id="copyResult"
+                                >
+                                    Copy
+                                </button>
+
+                                <button
+                                    type="button"
+                                    id="printResult"
+                                >
+                                    Print
+                                </button>
+
+                                <button
+                                    type="button"
+                                    id="exportResult"
+                                >
+                                    Export
+                                </button>
+
+                                <button
+                                    type="button"
+                                    id="calendarResult"
+                                >
+                                    Calendar
+                                </button>
+
+                                <button
+                                    type="button"
+                                    id="imageResult"
+                                >
+                                    Save Image
+                                </button>
+
+                            </div>
+
+                            <div class="device-actions">
+                                <label for="deadlineImage" class="secondary-action camera-action">
+                                    Capture Image
+                                </label>
+                                <input
+                                    type="file"
+                                    id="deadlineImage"
+                                    accept="image/*"
+                                    capture="environment"
+                                    hidden
+                                >
+                                <span id="imageStatus" aria-live="polite"></span>
+                            </div>
+
+
+                            <div class="calculation-note">
+
+                                <strong>
+                                    Calculation basis
+                                </strong>
+
+                                <p id="calculationBasis">
+                                    No calculation has been performed.
+                                </p></div>
+
+                            <div class="smart-answer" id="smartAnswer" aria-live="polite">
+                                <strong>Smart answer</strong>
+                                <p>Complete the form to receive a plain-language explanation.</p>
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =========================================
+                     CALENDAR
+                ========================================== -->
+
+                <section
+                    class="page"
+                    id="calendar"
+                    data-page-section
+                    hidden
+                >
+
+                    <div class="page-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                DEADLINE MANAGEMENT
+                            </span>
+
+                            <h1>
+                                Legal Calendar
+                            </h1>
+
+                            <p>
+                                View important dates and deadlines.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <article class="panel calendar-panel">
+
+                        <div
+                            class="calendar-toolbar"
+                            id="calendarToolbar"
+                        >
+                            <!-- Generated by JavaScript -->
+                        </div>
+
+
+                        <div
+                            class="calendar-grid"
+                            id="calendarGrid"
+                        >
+                            <!-- Generated by JavaScript -->
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =========================================
+                     HISTORY
+                ========================================== -->
+
+                <section
+                    class="page"
+                    id="history"
+                    data-page-section
+                    hidden
+                >
+
+                    <div class="page-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                RECORDS
+                            </span>
+
+                            <h1>
+                                Calculation History
+                            </h1>
+
+                            <p>
+                                Review and manage previous calculations.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="danger-action"
+                            id="clearHistory"
+                        >
+                            Clear History
+                        </button>
+
+                    </div>
+
+
+                    <article class="panel">
+
+                        <div class="table-wrapper">
+
+                            <table class="history-table">
+
+                                <thead>
+
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Period</th>
+                                        <th>Method</th>
+                                        <th>Deadline</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+
+                                </thead>
+
+                                <tbody id="historyTableBody">
+
+                                    <tr>
+                                        <td
+                                            colspan="6"
+                                            class="empty-state"
+                                        >
+                                            No calculation history.
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </article>
+
+                </section><!-- =========================================
+                     LEGAL RULES
+                ========================================== -->
+
+                <section
+                    class="page"
+                    id="rules"
+                    data-page-section
+                    hidden
+                >
+
+                    <div class="page-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                LEGAL FRAMEWORK
+                            </span>
+
+                            <h1>
+                                Legal Rules
+                            </h1>
+
+                            <p>
+                                Manage the rules used by the
+                                calculation engine.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="rules-grid"
+                        id="rulesList"
+                    >
+                        <!-- Generated by JavaScript -->
+                    </div>
+
+                    <p class="rules-disclaimer">
+                        These are configurable calculation conventions for this tool, not legal advice. Confirm the applicable statute, court rule, or filing instruction for each matter.
+                    </p>
+
+                </section>
+
+
+
+                <!-- =========================================
+                     HOLIDAYS
+                ========================================== -->
+
+                <section
+                    class="page"
+                    id="holidays"
+                    data-page-section
+                    hidden
+                >
+
+                    <div class="page-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                NON-WORKING DAYS
+                            </span>
+
+                            <h1>
+                                Holidays & Non-Working Days
+                            </h1>
+
+                            <p>
+                                Configure dates that affect deadline
+                                calculations.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <article class="panel">
+
+                        <form id="holidayForm">
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+
+                                    <label for="holidayDate">
+                                        Date
+                                    </label>
+
+                                    <input
+                                        type="date"
+                                        id="holidayDate"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="holidayName">
+                                        Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="holidayName"
+                                        placeholder="Holiday name"
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="primary-action"
+                            >
+                                Add Holiday
+                            </button>
+
+                        </form>
+
+
+                        <div
+                            class="holiday-list"
+                            id="holidayList"
+                        >
+                            <!-- Generated by JavaScript -->
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =========================================
+                     SETTINGS
+                ========================================== --><section
+                    class="page"
+                    id="settings"
+                    data-page-section
+                    hidden
+                >
+
+                    <div class="page-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                APPLICATION
+                            </span>
+
+                            <h1>
+                                Settings
+                            </h1>
+
+                            <p>
+                                Configure your QTech Legal workspace.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-grid">
+
+
+                        <article class="panel">
+
+                            <h2>
+                                General
+                            </h2>
+
+
+                            <div class="setting-row">
+
+                                <div>
+
+                                    <strong>
+                                        Theme
+                                    </strong>
+
+                                    <small>
+                                        Choose the application appearance.
+                                    </small>
+
+                                </div>
+
+
+                                <select id="themeSetting">
+
+                                    <option value="system">
+                                        System
+                                    </option>
+
+                                    <option value="light">
+                                        Light
+                                    </option>
+
+                                    <option value="dark">
+                                        Dark
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="setting-row">
+
+                                <div>
+
+                                    <strong>
+                                        Weekend
+                                    </strong>
+
+                                    <small>
+                                        Default non-working days.
+                                    </small>
+
+                                </div>
+
+
+                                <select id="defaultWeekend">
+
+                                    <option value="friday-saturday">
+                                        Friday & Saturday
+                                    </option>
+
+                                    <option value="saturday-sunday">
+                                        Saturday & Sunday
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <article class="panel">
+
+                            <h2>
+                                Data
+                            </h2>
+
+
+                            <div class="setting-row">
+
+                                <div>
+
+                                    <strong>
+                                        Local Storage
+                                    </strong>
+
+                                    <small>
+                                        Save calculations locally
+                                        on this device.
+                                    </small>
+
+                                </div>
+
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        id="storageSetting"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+            </main><!-- =============================================
+                 FOOTER
+            ============================================== -->
+
+            <footer class="app-footer">
+
+                <div>
+
+                    <strong>
+                        QTech Legal
+                    </strong>
+
+                    <span>
+                        Legal Technology Platform
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        © 2026 QTech
+                    </span>
+
+                    <span>
+                        •
+                    </span>
+
+                    <span>
+                        Informational tool
+                    </span>
+
+                </div>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST NOTIFICATIONS
+    ====================================================== -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         MODAL
+    ====================================================== -->
+
+    <div
+        class="modal"
+        id="modal"
+        hidden
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+    >
+
+        <div class="modal-overlay" data-modal-close></div>
+
+        <div class="modal-content">
+
+            <header class="modal-header">
+
+                <h2 id="modalTitle">
+                    QTech Legal
+                </h2>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    data-modal-close
+                    aria-label="Close"
+                >
+                    ×
+                </button>
+
+            </header>
+
+
+            <div
+                class="modal-body"
+                id="modalBody"
+            >
+            </div>
+
+
+            <footer class="modal-footer">
+
+                <button
+                    type="button"
+                    class="secondary-action"
+                    data-modal-close
+                >
+                    Close
+                </button>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
